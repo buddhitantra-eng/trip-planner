@@ -1,7 +1,5 @@
 "use client";
-
 import { useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 import AuthModal from "@/components/AuthModal";
 import type { User } from "@supabase/supabase-js";
@@ -31,23 +29,25 @@ export default function AppHeader({ title, subtitle }: AppHeaderProps) {
 
   return (
     <>
-      <header className="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
+      <header className="fixed top-0 w-full z-50 bg-[#060e1f]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(6,14,31,0.4)]">
+        <div className="flex flex-row-reverse justify-between items-center px-6 py-4 w-full max-w-none">
           <div className="flex items-center gap-3">
-            <a href="/" className="flex items-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/ags-logo.svg" alt="A.G.S" width={110} height={30} />
+            <a href="/">
+              <span className="text-2xl font-black bg-gradient-to-l from-[#85adff] to-[#53ddfc] bg-clip-text text-transparent font-headline">A.G.S</span>
             </a>
-            {subtitle && <span className="text-sm text-gray-400">{subtitle}</span>}
           </div>
-          <div className="flex items-center gap-2">
+          {subtitle && (
+            <span className="text-sm text-on-surface-variant font-medium">{subtitle}</span>
+          )}
+          <div className="flex items-center gap-4">
             {user ? (
               <>
-                <a href="/my-trips" className="text-sm text-gray-400 hover:text-white transition-colors">
+                <a href="/my-trips" className="text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1">
+                  <span className="material-symbols-outlined text-sm">travel_explore</span>
                   הטיולים שלי
                 </a>
                 <div
-                  className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white text-sm font-bold cursor-pointer"
+                  className="w-10 h-10 rounded-full bg-surface-container-highest border border-outline-variant/30 flex items-center justify-center text-primary text-sm font-bold cursor-pointer hover:border-primary/50 transition-colors"
                   title={user.email ?? ""}
                   onClick={handleLogout}
                 >
@@ -55,14 +55,13 @@ export default function AppHeader({ title, subtitle }: AppHeaderProps) {
                 </div>
               </>
             ) : (
-              <Button
-                size="sm"
-                variant="ghost"
-                className="text-gray-400 hover:text-white"
+              <button
+                className="text-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1"
                 onClick={() => setShowAuth(true)}
               >
+                <span className="material-symbols-outlined text-sm">person</span>
                 התחברות
-              </Button>
+              </button>
             )}
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import BottomNav from "@/components/BottomNav";
 import "./globals.css";
 
 const geist = Geist({
@@ -20,8 +21,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="he" dir="rtl" className={`${geist.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-gray-950 text-gray-50 antialiased">
+      <body className="min-h-full flex flex-col bg-background font-body text-on-surface antialiased">
         {children}
+        <BottomNav />
         <Toaster position="top-center" richColors />
       </body>
     </html>

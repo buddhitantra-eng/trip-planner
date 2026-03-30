@@ -1,8 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Assistant:wght@300;400;500;600;700;800&family=Manrope:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
+
+.glass-card {
+  background: rgba(15, 25, 47, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.bg-starfield {
+  background: radial-gradient(circle at 50% 50%, #1a253f 0%, #060e1f 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(to left, #85adff, #53ddfc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -46,6 +69,47 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Stitch design system colors */
+  --color-on-tertiary-container: #414c69;
+  --color-tertiary: #e2e7ff;
+  --color-primary-dim: #699cff;
+  --color-surface-bright: #1f2c47;
+  --color-outline: #6d758b;
+  --color-primary: #85adff;
+  --color-on-background: #dde5fe;
+  --color-tertiary-container: #cfd9fd;
+  --color-outline-variant: #40485c;
+  --color-secondary-fixed-dim: #48d4f3;
+  --color-on-surface-variant: #a3abc2;
+  --color-on-primary: #002c66;
+  --color-surface-variant: #1a253f;
+  --color-surface-container-highest: #1a253f;
+  --color-background: #060e1f;
+  --color-secondary-fixed: #65e1ff;
+  --color-surface-container: #0f192f;
+  --color-error: #ff716c;
+  --color-surface-dim: #060e1f;
+  --color-error-container: #9f0519;
+  --color-secondary-container: #00687a;
+  --color-primary-fixed: #6e9fff;
+  --color-surface: #060e1f;
+  --color-primary-fixed-dim: #5391ff;
+  --color-secondary-dim: #40ceed;
+  --color-on-secondary-container: #ecfaff;
+  --color-surface-container-high: #141f37;
+  --color-surface-container-lowest: #000000;
+  --color-on-primary-container: #002150;
+  --color-secondary: #53ddfc;
+  --color-tertiary-dim: #c1cbee;
+  --color-surface-container-low: #0a1327;
+  --color-on-surface: #dde5fe;
+  --color-primary-container: #6e9fff;
+
+  /* Stitch design system fonts */
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Assistant", sans-serif;
+  --font-label: "Manrope", sans-serif;
 }
 
 :root {
