@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -c \"[System.Media.SystemSounds]::Beep.Play()\""
+          }
+        ]
+      }
+    ]
+  },
+  "skills": [
+    "anthropics/frontend-design",
+    "vercel-labs/find-skills",
+    "vercel-labs/vercel-react-best-practices"
+  ]
+}
