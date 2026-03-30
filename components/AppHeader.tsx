@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/client";
 import AuthModal from "@/components/AuthModal";
@@ -36,7 +35,8 @@ export default function AppHeader({ title, subtitle }: AppHeaderProps) {
         <div className="max-w-2xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <a href="/" className="flex items-center">
-              <Image src="/ags-logo.svg" alt="A.G.S" width={110} height={30} priority />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/ags-logo.svg" alt="A.G.S" width={110} height={30} />
             </a>
             {subtitle && <span className="text-sm text-gray-400">{subtitle}</span>}
           </div>
