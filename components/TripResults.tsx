@@ -105,8 +105,9 @@ export default function TripResults({ form }: { form: TripFormData }) {
           setRaw(accumulated);
         }
 
-        // Parse JSON from accumulated response
-        const jsonMatch = accumulated.match(/\{[\s\S]*\}/);
+        // Parse JSON from accumulated response (strip markdown code blocks if present)
+        const cleaned = accumulated.replace(/^```(?:json)?\s*/i, "").replace(/\s*```\s*$/, "").trim();
+        const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
         if (jsonMatch) {
           const parsed = JSON.parse(jsonMatch[0]);
           setTrip(parsed);
