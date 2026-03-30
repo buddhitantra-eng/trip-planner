@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <!-- Background -->
+  <rect width="220" height="60" rx="6" fill="#1e3560"/>
+  <!-- Subtle diagonal lines -->
+  <line x1="0" y1="60" x2="60" y2="0" stroke="#2a4a80" stroke-width="8"/>
+  <line x1="20" y1="60" x2="80" y2="0" stroke="#2a4a80" stroke-width="8"/>
+  <line x1="160" y1="60" x2="220" y2="0" stroke="#2a4a80" stroke-width="8"/>
+  <line x1="180" y1="60" x2="220" y2="20" stroke="#2a4a80" stroke-width="8"/>
+  <!-- A.G.S text -->
+  <text x="110" y="36" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="28" fill="white" text-anchor="middle" letter-spacing="4">A.G.S</text>
+  <!-- Subtitle -->
+  <text x="110" y="52" font-family="Arial, sans-serif" font-size="9.5" fill="#c8d8f0" text-anchor="middle" letter-spacing="0.5">בית הספר ללוגיסטיקה מתקדמת</text>
+</svg>
